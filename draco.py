@@ -5,7 +5,7 @@ centered and pure forward/backward differences.
 With draco, one can compute coefficients for stencils made of, for instance, two 'forward' points
 and three 'backward' points.
 
-Users input two things through the command line, in the following order:
+Users input two things through the command line:
 
 1. 'stencil' - the grid offsets used in the derivative approximation
 2. 'derivativeOrder' - the order of the derivative to be approximated
@@ -14,6 +14,10 @@ The stencil vector must have unique entries.
 For example, [-1, 0, +1] uses a grid point and its two adjacent neighbors (a centered difference).
 Similarly the stencil [-1, 0, +1, +2] uses a grid point and its left neighbor and two right neighbors.
 The stencil [-2, -1, 0] will make a backward difference and [0, +1, +2] will make a forward difference.
+
+Example usage: python3 draco.py --derorder=1 --stencil=[-1,0,+1]
+
+Another example: python3 draco.py --derorder=2 --stencil=[-1,0,+1,+2,+3]
 
 The code will write out two things:
 
